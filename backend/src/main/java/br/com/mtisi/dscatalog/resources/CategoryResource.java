@@ -18,7 +18,7 @@ import java.util.List;
 public class CategoryResource {
 
     @Autowired
-    CategoryService service;
+    private CategoryService service;
 
     @GetMapping
     public ResponseEntity<List<CategoryDTO>> finall() {
