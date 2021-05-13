@@ -1,6 +1,7 @@
 package br.com.mtisi.dscatalog.resources;
 
 
+import br.com.mtisi.dscatalog.DTO.CategoryDTO;
 import br.com.mtisi.dscatalog.entities.Category;
 import br.com.mtisi.dscatalog.repository.CategoryRepository;
 import br.com.mtisi.dscatalog.services.CategoryService;
@@ -21,8 +22,8 @@ public class CategoryResource {
     CategoryService service;
 
     @GetMapping
-    public ResponseEntity<List<Category>> finall() {
-        List<Category> categoryList = service.findAll();
+    public ResponseEntity<List<CategoryDTO>> finall() {
+        List<CategoryDTO> categoryList = service.findAll();
         return ResponseEntity.ok().body(categoryList);
     }
 
