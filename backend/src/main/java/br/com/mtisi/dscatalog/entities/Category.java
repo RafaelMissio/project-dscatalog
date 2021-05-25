@@ -56,7 +56,7 @@ public class Category implements Serializable {
     public void prePersist(){
         createAt = Instant.now();
     }
-    @PrePersist
+    @PreUpdate
     public void preUpdate(){
         updateAt = Instant.now();
     }
