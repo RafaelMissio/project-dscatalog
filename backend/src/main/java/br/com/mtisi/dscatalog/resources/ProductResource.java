@@ -39,7 +39,7 @@ public class ProductResource {
     }
 
     @PostMapping
-    public ResponseEntity<ProductDTO> insert(ProductDTO dto){
+    public ResponseEntity<ProductDTO> insert(@RequestBody ProductDTO dto){
         dto = service.Insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}").buildAndExpand(dto.getId()).toUri();
         return ResponseEntity.created(uri).body(dto);
@@ -52,7 +52,7 @@ public class ProductResource {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Product> delete(Long id){
+    public ResponseEntity<Product> delete(@PathVariable Long id){
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
